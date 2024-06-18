@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta
             name="description"
-            content="Documentation for the Kittn API"
+            content="Documentation for the KSPAY API"
         >
-    <title>API Reference</title>
+    <title>KSPAY API Reference_heejinTest</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -288,14 +288,14 @@
     </style>
     <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-024da600.js"></script>
+      <script src="javascripts/all_nosearch-53bdb4f3.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -305,33 +305,43 @@
     <div class="toc-wrapper">
       <img src="images/logo-1e815a84.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">예시</a>
         </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction_heejintest" class="toc-h1 toc-link" data-title="Introduction_heejinTest">Introduction_heejinTest</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#api" class="toc-h1 toc-link" data-title="API 사용 안내">API 사용 안내</a>
           </li>
           <li>
-            <a href="#kittensbabe" class="toc-h1 toc-link" data-title="KittensBabe">KittensBabe</a>
+            <a href="#api-2" class="toc-h1 toc-link" data-title="API 인증">API 인증</a>
+          </li>
+          <li>
+            <a href="#response" class="toc-h1 toc-link" data-title="Response 공통">Response 공통</a>
+          </li>
+          <li>
+            <a href="#1-api" class="toc-h1 toc-link" data-title="1. 카드 API">1. 카드 API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#1-1" class="toc-h2 toc-link" data-title="1.1. 카드결제 취소">1.1. 카드결제 취소</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#1-2" class="toc-h2 toc-link" data-title="1.2. 카드 인증">1.2. 카드 인증</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#1-3" class="toc-h2 toc-link" data-title="1.3. 카드 비인증 결제">1.3. 카드 비인증 결제</a>
+                  </li>
+                  <li>
+                    <a href="#1-4" class="toc-h2 toc-link" data-title="1.4. 카드 구인증 결제">1.4. 카드 구인증 결제</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#2-api" class="toc-h1 toc-link" data-title="2. 실시간 계좌이체 API">2. 실시간 계좌이체 API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#2-1" class="toc-h2 toc-link" data-title="2.1. 실시간 계좌이체 취소">2.1. 실시간 계좌이체 취소</a>
                   </li>
               </ul>
           </li>
@@ -340,190 +350,1182 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.ksnet.co.kr'>KSNET</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='introduction_heejintest'>Introduction_heejinTest</h1>
+<p>KSPAY결제 연동을 위해 제공되는 API입니다.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<ul>
+<li><strong>문의</strong>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<ul>
+<li>기술문의: pgmodule@ksnet.co.kr</li>
+<li>사업문의: ksnet001@ksnet.co.kr</li>
+</ul></li>
+</ul>
+<h1 id='api'>API 사용 안내</h1>
+<p>API 사용을 위해서는 KSNET PG사업부에 가맹점 등록 및 인증키 발급이 필요합니다.</p>
+
+<p>https프로토콜만 허용되며, 공식적으로 지원하는 TLS버전은 1.2버전 이상입니다. (TLS1.2/1.3)</p>
+
+<p>요청 파라미터의 Method는 POST, Content-Type은 application/json; charset=utf-8을 사용하셔야 합니다.</p>
+
+<p>KSNET과 카드사 및 일부 은행의 경우 문자 인코딩을 EUC-KR로 사용합니다. 따라서, 파라미터를 UTF-8을 전달하더라도 EUC-KR로 표현 가능한 문자여야 합니다.</p>
+
+<p>API URL 형식은 {API 서버}{API URI} 입니다.</p>
+
+<ul>
+<li><strong>API 서버</strong>
+
+<ul>
+<li>운영 서버: https://pay.ksnet.co.kr</li>
+<li>개발 서버: https://paydev.ksnet.co.kr</li>
+</ul></li>
+</ul>
+<h1 id='api-2'>API 인증</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>인증키 설정 예시</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight plaintext"><code>curl -v -X POST https://pgdev.ksnet.co.kr/kspay/webfep//api/v1/card/cancel \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: pgapi Mjk5OTE5OTk5OTpNQTAxOkE0RTc2QkRBMzM3RENDQTk1Mjk4RkI0OTVBODREMzY5'  \
+  -D ...
 </code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<p>API 사용을 위해 HTTP Request Header에 인증키 설정이 필요</p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p><strong>인증키 획득 절차</strong></p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<ul>
+<li>Step.1 - <a href="https://ksta.ksnet.co.kr">KSTA Login</a></li>
+<li>Step.2 - PG Shop info : PG상점정보 &gt; 상점정보 &gt; 상점아이디 입력 &gt; Search &gt; 해당 상점아이디 Click</li>
+<li>Step.3 - Check &#39;pgapi&#39; key info : 하단 pgapi항목에서 키값을 획득하실 수 있습니다.</li>
+</ul>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+{apiKey}가 유출될 경우 해커에 의한 부정취소 등이 발생할 수 있으므로 javascript 같은 client에 노출된 형태로 사용하지 않도록 주의하여야 합니다.
 </aside>
-<h1 id='kittensbabe'>KittensBabe</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
+<h1 id='response'>Response 공통</h1>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>응답 예시</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+  "aid": "API 요청 고유값",
+  "code": "API 응답 코드",
+  "message": "API 응답 메시지",
+  "data": {
+    ...
+  }
+}
+</code></pre></div>
+<p>API 표준 응답은 다음과 같습니다.</p>
+
+<p>http status : 200 OK</p>
+
+<p>Content-Type: application/json;charset=utf-8</p>
+
+<ol>
+<li>aid: 매 요청에 대하여 KSNET에서 부여하는 고유한 문자열입니다.</li>
+<li>code: 요청에 대한 응답 코드입니다.
+
+<ul>
+<li>A0200: 처리 성공 (유일한 성공값으로, A0200외 다른 값은 실패를 의미합니다.)</li>
+<li>A0201: 처리 실패 (처리 실패의 경우 반드시 data 항목의 응답코드와 응답메시지를 확인하시기 바랍니다.)</li>
+<li>A0400: 요청 파라미터 오류</li>
+<li>A0401: 인증 오류</li>
+<li>A0403: 프로토콜 오류</li>
+<li>A0500: 서버 오류 (KSNET 기술팀 문의)</li>
+<li>A0999: 기타 오류</li>
+</ul></li>
+<li>message: 코드보다 상세한 내용이 담긴 응답값입니다.</li>
+<li>data: API별 세부 응답 값으로, JSON객체로 구성됩니다. 일부 API는 null값을 응답할 수도 있습니다.</li>
+</ol>
+<h1 id='1-api'>1. 카드 API</h1><h2 id='1-1'>1.1. 카드결제 취소</h2>
+<p>카드 결제를 취소할 수 있는 API입니다.</p>
+
+<p>매입 전 취소는 승인 취소로 처리되어 바로 환불이 이루어지지만, 매입된 거래건 또는 부분취소 거래건에 대해서는 +1~3영업일이 소요될 수 있습니다.</p>
+
+<p>부분취소는 최대 &#39;9회’까지 가능한 점을 참고해 주시기 바랍니다.</p>
+
+<p>취소는 결제일 기준 6개월까지만 가능합니다.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/card/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cancel');">테스트요청</button></code></p>
+<h3 id='9fead3874b'>요청항목</h3>
+<blockquote>
+<p>신용카드 결제 취소 요청 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "2999199999",
+    "payload": "KST20240604S031",
+    "cancelType": "FULL",
+    "orgTradeKeyType": "TID",
+    "orgTradeKey": "189189008016",
+    "orgTradeDate": "",
+    "cancelTotalAmount": "",
+    "cancelTaxFreeAmount": "",
+    "cancelSeq": ""
+}
+</code></pre></div>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Name</th>
+<th>Size</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>cancelType*</td>
+<td>10</td>
+<td><strong>취소처리구분</strong><br>- FULL : 전체취소, PARTIAL : 부분취소</td>
+</tr>
+<tr>
+<td>orgTradeKeyType*</td>
+<td>10</td>
+<td><strong>거래키구분</strong><br>- TID : 거래번호취소, ORDER_NUMB : 주문번호취소</td>
+</tr>
+<tr>
+<td>orgTradeKey*</td>
+<td>50</td>
+<td><strong>원거래 키</strong><br>- 원거래 구분에 해당하는 TID 혹은 ORDER_NUMB 값</td>
+</tr>
+<tr>
+<td>orgTradeDate</td>
+<td>8</td>
+<td><strong>원거래일자</strong><br>- 주문번호 취소시 설정필요(yyyyMMdd)</td>
+</tr>
+<tr>
+<td>cancelTotalAmount</td>
+<td>9</td>
+<td><strong>취소 총금액</strong><br>- 선택 항목으로 부분취소 시 사용하는 필수값입니다.</td>
+</tr>
+<tr>
+<td>cancelTaxFreeAmount</td>
+<td>9</td>
+<td><strong>취소 면세금액</strong><br>- 부분취소 시 취소 총금액 중 면세금액이 있을 경우 설정</td>
+</tr>
+<tr>
+<td>cancelSeq</td>
+<td>1</td>
+<td><strong>취소일련번호</strong><br>- 선택 항목으로 부분취소 시 사용하는 필수값이며 해당 회차 부분취소 일련번호입니다.(1~9)</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<h3 id='body-gt-data'>응답항목(Body &gt; data)</h3>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>신용카드 결제 취소 응답 예시</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid":"WFVCCSE00000000000054321",
+  "code":"A0200",
+  "message":"Success",
+  "data": {
+    "payload": "KST20240604S031",
+    "tid":"189189008016",
+    "tradeDateTime":"20240604120147",
+    "cancelAmount":"50004",
+    "respCode":"0000",
+    "respMessage":"승인취소완료/매입취소요청",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "approvalNumb":"00876543",
+    "cardNumb":"40176201XXXX825X",
+    "expiryDate":"",
+    "installMonth":"03"
+}}
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+# 실패응답
+{
+  "aid":"WFVCCSE00000000000054320",
+  "code":"A0201",
+  "message":"Fail",
+  "data": {
+    "payload": "KST20240604S027",
+    "tid":"Lbd124090990",
+    "tradeDateTime":"20240604102151",
+    "cancelAmount":"",
+    "respCode":"7003",
+    "respMessage":"취소거절기간경과/Tel:1544-6030",
+    "issuerCardType":"UNDEFINED",
+    "issuerCardName":"미등록카드사",
+    "purchaseCardType":"UNDEFINED",
+    "purchaseCardName":"미등록카드사",
+    "approvalNumb":"7003",
+    "cardNumb":"",
+    "expiryDate":"",
+    "installMonth":""
+}}
+</code></pre></div>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Name</th>
+<th>Size</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>cancelAmount</td>
+<td>9</td>
+<td>취소된금액</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>issuerCardType</td>
+<td>20</td>
+<td>발급사타입</td>
+</tr>
+<tr>
+<td>issuerCardName</td>
+<td>20</td>
+<td>발급사명</td>
+</tr>
+<tr>
+<td>purchaseCardType</td>
+<td>20</td>
+<td>매입사타입</td>
+</tr>
+<tr>
+<td>purchaseCardName</td>
+<td>20</td>
+<td>매입사명</td>
+</tr>
+<tr>
+<td>approvalNumb</td>
+<td>12</td>
+<td>승인번호</td>
+</tr>
+<tr>
+<td>cardNumb</td>
+<td>20</td>
+<td>카드번호</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>4</td>
+<td>유효기간</td>
+</tr>
+<tr>
+<td>installMonth</td>
+<td>2</td>
+<td>할부개월수</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='1-2'>1.2. 카드 인증</h2>
+<p>카드번호/유효기간/생년월일/비밀번호로 카드 소유자 인증을 진행하는 API입니다.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>결제가 아닌 단순 인증만 진행하므로 유의하여 사용하시기 바랍니다.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p>서비스를 위해서는 사업부를 통해 별도의 계약이 필요합니다.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/card/cert <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cert');">테스트요청</button></code></p>
+<h3 id='9fead3874b-2'>요청항목</h3>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>카드 인증 요청 예시</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "2999199999",
+    "payload": "KST20240604S011",
+    "orderNumb": "M20240604103105",
+    "userName": "홍길동",
+    "productName": "핑크테디",
+    "cardNumb": "4017620101234567",
+    "expiryDate": "3012",
+    "password2": "99",
+    "userInfo": "680102"
+}
+</code></pre></div>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Name</th>
+<th>Size</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>orderNumb*</td>
+<td>50</td>
+<td><strong>가맹점 주문번호</strong></td>
+</tr>
+<tr>
+<td>userName*</td>
+<td>50</td>
+<td><strong>주문자명</strong></td>
+</tr>
+<tr>
+<td>productName*</td>
+<td>50</td>
+<td><strong>상품명</strong></td>
+</tr>
+<tr>
+<td>cardNumb*</td>
+<td>20</td>
+<td><strong>카드번호</strong></td>
+</tr>
+<tr>
+<td>expiryDate*</td>
+<td>4</td>
+<td><strong>유효기간</strong><br>- 연월(yyMM) 형태의 4자리 포맷을 사용합니다.</td>
+</tr>
+<tr>
+<td>password2*</td>
+<td>2</td>
+<td><strong>카드비밀번호 앞2자리</strong></td>
+</tr>
+<tr>
+<td>userInfo*</td>
+<td>10</td>
+<td><strong>사용자정보</strong><br>- 개인명의카드: 카드 소유자 생년월일 6자리(yyMMdd)<br>- 법인명의 법인카드: 사업자번호 10자리</td>
+</tr>
+</tbody></table>
+<h3 id='body-gt-data-2'>응답항목(Body &gt; data)</h3>
+<blockquote>
+<p>카드 인증 응답 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid":"WFVCCSE00000000000054111",
+  "code":"A0200",
+  "message":"Success",
+  "data": {
+    "payload": "KST20240604S011",
+    "tid":"189189011016",
+    "tradeDateTime":"20240604103147",
+    "totalAmount":"50004",
+    "respCode":"0000",
+    "respMessage":"현대카드/OK: 00000000",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "cardNumb":"40176201XXXX825X",
+    "approvalNumb": "00000000",
+    "expiryDate": "",
+    "installMonth": "",
+    "cardType":"CREDIT"
+}}
+
+# 실패응답
+{
+  "aid":"WFVCCSE00000000000054110",
+  "code":"A0201",
+  "message":"Fail",
+  "data": {
+    "payload": "KST20240604S027",
+    "tid":"Lbd124090911",
+    "tradeDateTime":"20240604103120",
+    "totalAmount":"",
+    "respCode":"6003",
+    "respMessage":"비밀번호오류/비밀번호확인요망",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "cardNumb":"",
+    "approvalNumb": "",
+    "expiryDate": "",
+    "installMonth": "",
+    "cardType":""
+}}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>totalAmount</td>
+<td>9</td>
+<td>총금액</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>issuerCardType</td>
+<td>20</td>
+<td>발급사타입</td>
+</tr>
+<tr>
+<td>issuerCardName</td>
+<td>20</td>
+<td>발급사명</td>
+</tr>
+<tr>
+<td>purchaseCardType</td>
+<td>20</td>
+<td>매입사타입</td>
+</tr>
+<tr>
+<td>purchaseCardName</td>
+<td>20</td>
+<td>매입사명</td>
+</tr>
+<tr>
+<td>approvalNumb</td>
+<td>12</td>
+<td>승인번호</td>
+</tr>
+<tr>
+<td>cardNumb</td>
+<td>20</td>
+<td>카드번호</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>4</td>
+<td>유효기간</td>
+</tr>
+<tr>
+<td>installMonth</td>
+<td>2</td>
+<td>할부개월수</td>
+</tr>
+<tr>
+<td>cardType</td>
+<td>10</td>
+<td>카드타입(CREDIT/CHECK/GIFT/PREPAID)</td>
+</tr>
+</tbody></table>
+<h2 id='1-3'>1.3. 카드 비인증 결제</h2>
+<p>카드번호/유효기간으로 결제를 요청하는 비인증 승인 API입니다.</p>
+
+<p>서비스를 위해서는 사업부를 통해 별도의 계약이 필요합니다.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/card/pay/noncert <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_pay_noncert');">테스트요청</button></code></p>
+<h3 id='9fead3874b-3'>요청항목</h3>
+<blockquote>
+<p>카드 비인증 결제 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "2999199999",
+    "payload": "KST20240604S021",
+    "orderNumb": "M20240604103125",
+    "userName": "홍길동",
+    "userEmail": "test@test.com",
+    "productType": "REAL",
+    "productName": "핑크테디",
+    "totalAmount": "1004",
+    "cardNumb": "4017620101234567",
+    "expiryDate": "3012",
+    "installMonth": "00",
+    "currencyType": "KRW"
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>orderNumb*</td>
+<td>50</td>
+<td><strong>가맹점 주문번호</strong></td>
+</tr>
+<tr>
+<td>userName*</td>
+<td>50</td>
+<td><strong>주문자명</strong></td>
+</tr>
+<tr>
+<td>userEmail</td>
+<td>50</td>
+<td><strong>주주문자이메일</strong></td>
+</tr>
+<tr>
+<td>productType*</td>
+<td>10</td>
+<td><strong>상품구분</strong><br>- REAL : 실물상품, DIGITAL : 디지털컨텐츠</td>
+</tr>
+<tr>
+<td>productName*</td>
+<td>50</td>
+<td><strong>상품명</strong></td>
+</tr>
+<tr>
+<td>totalAmount*</td>
+<td>9</td>
+<td><strong>총금액</strong></td>
+</tr>
+<tr>
+<td>taxFreeAmount</td>
+<td>9</td>
+<td><strong>면세금액</strong><br>- 면세금액이 없으면 총금액 전체 과세처리</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>9</td>
+<td><strong>세금</strong><br>- 세금항목이 없으면 일반과세 상점의 경우 10% 부가세 계산 = (총금액-면세금액) / 11</td>
+</tr>
+<tr>
+<td>cardNumb*</td>
+<td>20</td>
+<td><strong>카드번호</strong></td>
+</tr>
+<tr>
+<td>expiryDate*</td>
+<td>4</td>
+<td><strong>유효기간</strong><br>- 연월(yyMM) 형태의 4자리 포맷을 사용합니다.</td>
+</tr>
+<tr>
+<td>installMonth*</td>
+<td>2</td>
+<td><strong>할부개월수</strong></td>
+</tr>
+<tr>
+<td>currencyType*</td>
+<td>3</td>
+<td><strong>통화타입</strong><br>- KRW : 원화, USD : 달러(모든 금액을 1달러=1000으로 표기)</td>
+</tr>
+</tbody></table>
+<h3 id='body-gt-data-3'>응답항목(Body &gt; data)</h3>
+<blockquote>
+<p>카드 비인증 결제 응답 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid":"WFVCCSE00000000000060121",
+  "code":"A0200",
+  "message":"Success",
+  "data": {
+    "payload": "KST20240604S021",
+    "tid":"189189011016",
+    "tradeDateTime":"20240604103121",
+    "totalAmount":"1004",
+    "respCode":"0000",
+    "respMessage":"현대카드/OK: 00112345",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "cardNumb":"40176201XXXX825X",
+    "approvalNumb": "00112345",
+    "expiryDate": "",
+    "installMonth": "",
+    "cardType":"CREDIT",
+    "partCancelYn":"Y"
+}}
+
+# 실패응답
+{
+  "aid":"WFVCCSE00000000000060120",
+  "code":"A0201",
+  "message":"Fail",
+  "data": {
+    "payload": "KST20240604S020",
+    "tid":"Lbd124090920",
+    "tradeDateTime":"20240604103120",
+    "totalAmount":"",
+    "respCode":"8326",
+    "respMessage":"승인거절/월사용한도초과",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "cardNumb":"",
+    "approvalNumb": "",
+    "expiryDate": "",
+    "installMonth": "",
+    "cardType":"",
+    "partCancelYn":""
+}}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>totalAmount</td>
+<td>9</td>
+<td>총금액</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>issuerCardType</td>
+<td>20</td>
+<td>발급사타입</td>
+</tr>
+<tr>
+<td>issuerCardName</td>
+<td>20</td>
+<td>발급사명</td>
+</tr>
+<tr>
+<td>purchaseCardType</td>
+<td>20</td>
+<td>매입사타입</td>
+</tr>
+<tr>
+<td>purchaseCardName</td>
+<td>20</td>
+<td>매입사명</td>
+</tr>
+<tr>
+<td>approvalNumb</td>
+<td>12</td>
+<td>승인번호</td>
+</tr>
+<tr>
+<td>cardNumb</td>
+<td>20</td>
+<td>카드번호</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>4</td>
+<td>유효기간</td>
+</tr>
+<tr>
+<td>installMonth</td>
+<td>2</td>
+<td>할부개월수</td>
+</tr>
+<tr>
+<td>cardType</td>
+<td>10</td>
+<td>카드타입(CREDIT/CHECK/GIFT/PREPAID)</td>
+</tr>
+<tr>
+<td>partCancelYn</td>
+<td>1</td>
+<td>부분취소가능여부</td>
+</tr>
+</tbody></table>
+<h2 id='1-4'>1.4. 카드 구인증 결제</h2>
+<p>카드번호/유효기간으로 결제를 요청하는 비인증 승인 API입니다.</p>
+
+<p>서비스를 위해서는 사업부를 통해 별도의 계약이 필요합니다.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/card/pay/oldcert <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_pay_oldcert');">테스트요청</button></code></p>
+<h3 id='9fead3874b-4'>요청항목</h3>
+<blockquote>
+<p>카드 구인증 결제 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "2999199999",
+    "payload": "KST20240604S022",
+    "orderNumb": "M20240604103126",
+    "userName": "홍길동",
+    "userEmail": "test@test.com",
+    "productType": "REAL",
+    "productName": "핑크테디",
+    "totalAmount": "1004",
+    "cardNumb": "4017620101234567",
+    "expiryDate": "3012",
+    "installMonth": "00",
+    "currencyType": "KRW",
+    "password2": "99",
+    "userInfo": "680102"
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>orderNumb*</td>
+<td>50</td>
+<td><strong>가맹점 주문번호</strong></td>
+</tr>
+<tr>
+<td>userName*</td>
+<td>50</td>
+<td><strong>주문자명</strong></td>
+</tr>
+<tr>
+<td>userEmail</td>
+<td>50</td>
+<td><strong>주주문자이메일</strong></td>
+</tr>
+<tr>
+<td>productType*</td>
+<td>10</td>
+<td><strong>상품구분</strong><br>- REAL : 실물상품, DIGITAL : 디지털컨텐츠</td>
+</tr>
+<tr>
+<td>productName*</td>
+<td>50</td>
+<td><strong>상품명</strong></td>
+</tr>
+<tr>
+<td>totalAmount*</td>
+<td>9</td>
+<td><strong>총금액</strong></td>
+</tr>
+<tr>
+<td>taxFreeAmount</td>
+<td>9</td>
+<td><strong>면세금액</strong><br>- 면세금액이 없으면 총금액 전체 과세처리</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>9</td>
+<td><strong>세금</strong><br>- 세금항목이 없으면 일반과세 상점의 경우 10% 부가세 계산 = (총금액-면세금액) / 11</td>
+</tr>
+<tr>
+<td>cardNumb*</td>
+<td>20</td>
+<td><strong>카드번호</strong></td>
+</tr>
+<tr>
+<td>expiryDate*</td>
+<td>4</td>
+<td><strong>유효기간</strong><br>- 연월(yyMM) 형태의 4자리 포맷을 사용합니다.</td>
+</tr>
+<tr>
+<td>installMonth*</td>
+<td>2</td>
+<td><strong>할부개월수</strong></td>
+</tr>
+<tr>
+<td>currencyType*</td>
+<td>3</td>
+<td><strong>통화타입</strong><br>- KRW : 원화, USD : 달러(모든 금액을 1달러=1000으로 표기)</td>
+</tr>
+<tr>
+<td>password2*</td>
+<td>2</td>
+<td><strong>카드비밀번호 앞2자리</strong></td>
+</tr>
+<tr>
+<td>userInfo*</td>
+<td>10</td>
+<td><strong>사용자정보</strong><br>- 개인명의카드: 카드 소유자 생년월일 6자리(yyMMdd)<br>- 법인명의 법인카드: 사업자번호 10자리</td>
+</tr>
+</tbody></table>
+<h3 id='body-gt-data-4'>응답항목(Body &gt; data)</h3>
+<blockquote>
+<p>카드 구인증 결제 응답 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid":"WFVCCSE00000000000060122",
+  "code":"A0200",
+  "message":"Success",
+  "data": {
+    "payload": "KST20240604S022",
+    "tid":"189189011016",
+    "tradeDateTime":"20240604103122",
+    "totalAmount":"1004",
+    "respCode":"0000",
+    "respMessage":"현대카드/OK: 00212345",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "cardNumb":"40176201XXXX825X",
+    "approvalNumb": "00212345",
+    "expiryDate": "",
+    "installMonth": "",
+    "cardType":"CREDIT",
+    "partCancelYn":"Y"
+}}
+
+# 실패응답
+{
+  "aid":"WFVCCSE00000000000060123",
+  "code":"A0201",
+  "message":"Fail",
+  "data": {
+    "payload": "KST20240604S023",
+    "tid":"Lbd124090923",
+    "tradeDateTime":"20240604103123",
+    "totalAmount":"",
+    "respCode":"8326",
+    "respMessage":"승인거절/월사용한도초과",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "cardNumb":"",
+    "approvalNumb": "",
+    "expiryDate": "",
+    "installMonth": "",
+    "cardType":"",
+    "partCancelYn":""
+}}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>totalAmount</td>
+<td>9</td>
+<td>총금액</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>issuerCardType</td>
+<td>20</td>
+<td>발급사타입</td>
+</tr>
+<tr>
+<td>issuerCardName</td>
+<td>20</td>
+<td>발급사명</td>
+</tr>
+<tr>
+<td>purchaseCardType</td>
+<td>20</td>
+<td>매입사타입</td>
+</tr>
+<tr>
+<td>purchaseCardName</td>
+<td>20</td>
+<td>매입사명</td>
+</tr>
+<tr>
+<td>approvalNumb</td>
+<td>12</td>
+<td>승인번호</td>
+</tr>
+<tr>
+<td>cardNumb</td>
+<td>20</td>
+<td>카드번호</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>4</td>
+<td>유효기간</td>
+</tr>
+<tr>
+<td>installMonth</td>
+<td>2</td>
+<td>할부개월수</td>
+</tr>
+<tr>
+<td>cardType</td>
+<td>10</td>
+<td>카드타입(CREDIT/CHECK/GIFT/PREPAID)</td>
+</tr>
+<tr>
+<td>partCancelYn</td>
+<td>1</td>
+<td>부분취소가능여부</td>
+</tr>
+</tbody></table>
+<h1 id='2-api'>2. 실시간 계좌이체 API</h1><h2 id='2-1'>2.1. 실시간 계좌이체 취소</h2>
+<p>계좌이체 결제를 취소할 수 있는 API입니다.</p>
+
+<p>결제 당일 취소는 즉시 처리되지만 결제 당일이 아닌 경우 계좌이체 원천사에 따라 +1~3영업일이 소요될 수 있습니다.</p>
+
+<p>취소가능 기간은 결제기관별로 상이(3~6개월)합니다. </p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/account/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=account_cancel');">테스트요청</button></code></p>
+<h3 id='9fead3874b-5'>요청항목</h3>
+<blockquote>
+<p>실시간 계좌이체 취소 요청 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "2999199990",
+    "payload": "KST20240604S221",
+    "cancelType": "FULL",
+    "orgTradeKeyType": "TID",
+    "orgTradeKey": "289189002031",
+    "orgTradeDate": "",
+    "cancelTotalAmount": "",
+    "cancelSeq": ""
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>cancelType*</td>
+<td>10</td>
+<td><strong>취소처리구분</strong><br>- FULL : 전체취소, PARTIAL : 부분취소</td>
+</tr>
+<tr>
+<td>orgTradeKeyType*</td>
+<td>10</td>
+<td><strong>거래키구분</strong><br>- TID : 거래번호취소, ORDER_NUMB : 주문번호취소</td>
+</tr>
+<tr>
+<td>orgTradeKey*</td>
+<td>50</td>
+<td><strong>원거래 키</strong><br>- 원거래 구분에 해당하는 TID 혹은 ORDER_NUMB 값</td>
+</tr>
+<tr>
+<td>orgTradeDate</td>
+<td>8</td>
+<td><strong>원거래일자</strong><br>- 주문번호 취소시 설정필요(yyyyMMdd)</td>
+</tr>
+<tr>
+<td>cancelTotalAmount</td>
+<td>9</td>
+<td><strong>취소 총금액</strong><br>- 선택 항목으로 부분취소 시 사용하는 필수값입니다.</td>
+</tr>
+<tr>
+<td>cancelSeq</td>
+<td>1</td>
+<td><strong>취소일련번호</strong><br>- 선택 항목으로 부분취소 시 사용하는 필수값이며 해당 회차 부분취소 일련번호입니다.(1~9)</td>
+</tr>
+</tbody></table>
+<h3 id='body-gt-data-5'>응답항목(Body &gt; data)</h3>
+<blockquote>
+<p>실시간 계좌이체 취소 응답 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid":"WFVCCSE00000000000054221",
+  "code":"A0200",
+  "message":"Success",
+  "data": {
+    "payload": "KST20240604S221",
+    "tid":"289189002031",
+    "tradeDateTime":"20240604120227",
+    "cancelAmount":"1004",
+    "respCode":"000",
+    "respMessage":"농협은행/OK:이체취소",
+    "agencyType":"5",
+    "agencyName":"금융결제원",
+    "approvalNumb":"011"
+}}
+
+# 실패응답
+{
+  "aid":"WFVCCSE00000000000054220",
+  "code":"A0201",
+  "message":"Fail",
+  "data": {
+    "payload": "KST20240604S220",
+    "tid":"Lbd124092990",
+    "tradeDateTime":"20240604120220",
+    "cancelAmount":"",
+    "respCode":"994",
+    "respMessage":"취소거절/취소원거래없음",
+    "agencyType":"5",
+    "agencyName":"금융결제원",
+    "approvalNumb":""
+}}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>cancelAmount</td>
+<td>9</td>
+<td>취소된금액</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>agencyType</td>
+<td>1</td>
+<td>대행사구분</td>
+</tr>
+<tr>
+<td>agencyName</td>
+<td>20</td>
+<td>대행사명</td>
+</tr>
+<tr>
+<td>approvalNumb</td>
+<td>12</td>
+<td>승인번호</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
@@ -588,10 +1590,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">예시</a>
           </div>
       </div>
     </div>
