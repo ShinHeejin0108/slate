@@ -348,6 +348,20 @@
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
+          <li>
+            <a href="#7" class="toc-h1 toc-link" data-title="7. 해피머니">7. 해피머니</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#7-1" class="toc-h2 toc-link" data-title="7.1 해피머니 잔액조회">7.1 해피머니 잔액조회</a>
+                  </li>
+                  <li>
+                    <a href="#7-2" class="toc-h2 toc-link" data-title="7.2 해피머니 사용 취소">7.2 해피머니 사용 취소</a>
+                  </li>
+                  <li>
+                    <a href="#7-3" class="toc-h2 toc-link" data-title="7.3 해피머니 사용">7.3 해피머니 사용</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://www.ksnet.co.kr'>KSNET</a></li>
@@ -1586,6 +1600,32 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
+<h1 id='7'>7. 해피머니</h1><h2 id='7-1'>7.1 해피머니 잔액조회</h2>
+<p>해피머니 잔액 조회 API입니다.</p>
+
+<p>잔액 조회 후 전달받는 PG거래번호(tid)는 해피머니 사용 API 호출 시 필수 파라미터로 전달하셔야 사용이 가능합니다.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/card/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cancel');">테스트요청</button></code></p>
+<h2 id='7-2'>7.2 해피머니 사용 취소</h2>
+<p>해피머니 사용 취소 API입니다.</p>
+
+<p>취소는 결제일 기준 6개월까지만 가능합니다.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/card/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cancel');">테스트요청</button></code></p>
+<h2 id='7-3'>7.3 해피머니 사용</h2>
+<p>해피머니 사용 API입니다.</p>
+
+<p>잔액 조회 후 사용이 가능하며 결제 금액보다 잔액이 크거나 같은지 확인 후 API 호출하시기 바랍니다.</p>
+
+<p>결제 요청 시 잔액조회를 통해 전달받은 PG거래번호를 올바르게 넣어야 결제가 가능합니다.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/card/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cancel');">테스트요청</button></code></p>
 
       </div>
       <div class="dark-box">
