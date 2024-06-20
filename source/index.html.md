@@ -8,7 +8,8 @@ toc_footers:
   - <a href='https://www.ksnet.co.kr'>KSNET</a>
 
 includes:
-  - errors, HappyMoney
+  - errors
+  - HappyMoney
 
 search: false
 
