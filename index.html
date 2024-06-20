@@ -357,14 +357,6 @@
                   <li>
                     <a href="#7-2" class="toc-h2 toc-link" data-title="7.2 해피머니 사용 취소">7.2 해피머니 사용 취소</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#1877e83086" class="toc-h1 toc-link" data-title="성공응답">성공응답</a>
-          </li>
-          <li>
-            <a href="#b58e2c19be" class="toc-h1 toc-link" data-title="실패응답">실패응답</a>
-              <ul class="toc-list-h2">
                   <li>
                     <a href="#7-3" class="toc-h2 toc-link" data-title="7.3 해피머니 사용">7.3 해피머니 사용</a>
                   </li>
@@ -1803,42 +1795,69 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <blockquote>
 <p>카드 인증 응답 예시</p>
 </blockquote>
-<h1 id='1877e83086'>성공응답</h1>
-<p>{
-  &quot;aid&quot;: &quot;API 요청 고유값&quot;,
-  &quot;code&quot;: &quot;API 응답 코드&quot;,
-  &quot;message&quot;: &quot;API 응답 메시지&quot;,
-  &quot;data&quot;: {
-    &quot;tid&quot;: &quot;PG거래번호&quot;,
-    &quot;tradeDateTime&quot;: &quot;거래일시&quot;,
-    &quot;respCode&quot;: &quot;승인코드&quot;,
-    &quot;respMessage&quot;: &quot;응답메시지&quot;,
-    &quot;payload&quot;: &quot;가맹점 데이터&quot;,
-    &quot;happyMoneyApprovalNumb&quot;: &quot;해피머니 승인번호&quot;
-  }
-}</p>
-<h1 id='b58e2c19be'>실패응답</h1>
-<p>{
-  &quot;aid&quot;: &quot;API 요청 고유값&quot;,
-  &quot;code&quot;: &quot;API 응답 코드&quot;,
-  &quot;message&quot;: &quot;API 응답 메시지&quot;,
-  &quot;data&quot;: {
-    &quot;tid&quot;: &quot;PG거래번호&quot;,
-    &quot;tradeDateTime&quot;: &quot;거래일시&quot;,
-    &quot;respCode&quot;: &quot;승인코드&quot;,
-    &quot;respMessage&quot;: &quot;응답메시지&quot;,
-    &quot;payload&quot;: &quot;가맹점 데이터&quot;,
-    &quot;happyMoneyApprovalNumb&quot;: &quot;해피머니 승인번호&quot;
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid": "API 요청 고유값",
+  "code": "API 응답 코드",
+  "message": "API 응답 메시지",
+  "data": {
+    "tid": "PG거래번호",
+    "tradeDateTime": "거래일시",
+    "respCode": "승인코드",
+    "respMessage": "응답메시지",
+    "payload": "가맹점 데이터",
+    "happyMoneyApprovalNumb": "해피머니 승인번호"
   }
 }
-```
-Name | Size | Description
---------- | ---- | -----------------------
-tid  | 12  | PG거래번호
-respCode  | 4  | 응답코드
-respMessage  | 40  | 응답메시지
-payload  | *  | 가맹점데이터
-happyMoneyApprovalNumb | 14 | 해피머니 승인번호</p>
+
+# 실패응답
+{
+  "aid": "API 요청 고유값",
+  "code": "API 응답 코드",
+  "message": "API 응답 메시지",
+  "data": {
+    "tid": "PG거래번호",
+    "tradeDateTime": "거래일시",
+    "respCode": "승인코드",
+    "respMessage": "응답메시지",
+    "payload": "가맹점 데이터",
+    "happyMoneyApprovalNumb": "해피머니 승인번호"
+  }
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>happyMoneyApprovalNumb</td>
+<td>14</td>
+<td>해피머니 승인번호</td>
+</tr>
+</tbody></table>
 <h2 id='7-3'>7.3 해피머니 사용</h2>
 <p>해피머니 사용 API입니다.</p>
 
