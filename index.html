@@ -357,6 +357,14 @@
                   <li>
                     <a href="#7-2" class="toc-h2 toc-link" data-title="7.2 해피머니 사용 취소">7.2 해피머니 사용 취소</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#1877e83086" class="toc-h1 toc-link" data-title="성공응답">성공응답</a>
+          </li>
+          <li>
+            <a href="#b58e2c19be" class="toc-h1 toc-link" data-title="실패응답">실패응답</a>
+              <ul class="toc-list-h2">
                   <li>
                     <a href="#7-3" class="toc-h2 toc-link" data-title="7.3 해피머니 사용">7.3 해피머니 사용</a>
                   </li>
@@ -1607,7 +1615,137 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
 <p><strong>HTTP Request</strong></p>
 
-<p>POST /kspay/webfep/api/v1/card/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cancel');">테스트요청</button></code></p>
+<p>POST /kspay/webfep/api/v1/happymoney/balance <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=happymoney_balance');">테스트요청</button></code></p>
+<h3 id='9fead3874b'>요청항목</h3>
+<blockquote>
+<p>해피머니 잔액 조회 요청 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "상점아이디",
+    "payload": "",
+    "happyMoneyUserId": "해피머니 사용자 아이디",
+    "happyMoneyUserPw": "해피머니 사용자 패스워드"
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>happyMoneyUserId *</td>
+<td>10</td>
+<td><strong>해피머니 사용자 아이디</strong></td>
+</tr>
+<tr>
+<td>happyMoneyUserPw *</td>
+<td>10</td>
+<td><strong>해피머니 사용자 패스워드</strong></td>
+</tr>
+</tbody></table>
+<h3 id='body-gt-data'>응답항목(Body &gt; data)</h3>
+<blockquote>
+<p>신용카드 결제 취소 응답 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid":"WFVCCSE00000000000054321",
+  "code":"A0200",
+  "message":"Success",
+  "data": {
+    "payload": "KST20240604S031",
+    "tid":"189189008016",
+    "tradeDateTime":"20240604120147",
+    "cancelAmount":"50004",
+    "respCode":"0000",
+    "respMessage":"승인취소완료/매입취소요청",
+    "issuerCardType":"HYUNDAI",
+    "issuerCardName":"현대카드",
+    "purchaseCardType":"HYUNDAI",
+    "purchaseCardName":"현대카드",
+    "approvalNumb":"00876543",
+    "cardNumb":"40176201XXXX825X",
+    "expiryDate":"",
+    "installMonth":"03"
+}}
+
+# 실패응답
+{
+  "aid":"WFVCCSE00000000000054320",
+  "code":"A0201",
+  "message":"Fail",
+  "data": {
+    "payload": "KST20240604S027",
+    "tid":"Lbd124090990",
+    "tradeDateTime":"20240604102151",
+    "cancelAmount":"",
+    "respCode":"7003",
+    "respMessage":"취소거절기간경과/Tel:1544-6030",
+    "issuerCardType":"UNDEFINED",
+    "issuerCardName":"미등록카드사",
+    "purchaseCardType":"UNDEFINED",
+    "purchaseCardName":"미등록카드사",
+    "approvalNumb":"7003",
+    "cardNumb":"",
+    "expiryDate":"",
+    "installMonth":""
+}}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>cancelAmount</td>
+<td>9</td>
+<td>취소된금액</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>happyMoneyBalance</td>
+<td>20</td>
+<td>해피머니 잔액</td>
+</tr>
+</tbody></table>
 <h2 id='7-2'>7.2 해피머니 사용 취소</h2>
 <p>해피머니 사용 취소 API입니다.</p>
 
@@ -1615,7 +1753,92 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
 <p><strong>HTTP Request</strong></p>
 
-<p>POST /kspay/webfep/api/v1/card/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cancel');">테스트요청</button></code></p>
+<p>POST /kspay/webfep/api/v1/happymoney/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=happymoney_cancel');">테스트요청</button></code></p>
+<h3 id='9fead3874b-2'>요청항목</h3>
+<blockquote>
+<p>해피머니 사용 취소 요청 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "상점아이디",
+    "payload": "가맹점데이터",
+    "orgTradeKeyType": "거래키구분",
+    "orgTradeKey": "원거래 키",
+    "orgTradeDate": "원거래일자"
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>orgTradeKeyType*</td>
+<td>50</td>
+<td>**거래키구분<br>- TID : 결제 응답으로 부여받은 tid 값<br>- ORDER_NUMB : 결제 요청 시 생성한 가맹점 주문번호</td>
+</tr>
+<tr>
+<td>orgTradeKey*</td>
+<td>50</td>
+<td>**원거래 키</td>
+</tr>
+<tr>
+<td>orgTradeDate*</td>
+<td>50</td>
+<td>**원거래일자</td>
+</tr>
+</tbody></table>
+<h3 id='body-gt-data-2'>응답항목(Body &gt; data)</h3>
+<blockquote>
+<p>카드 인증 응답 예시</p>
+</blockquote>
+<h1 id='1877e83086'>성공응답</h1>
+<p>{
+  &quot;aid&quot;: &quot;API 요청 고유값&quot;,
+  &quot;code&quot;: &quot;API 응답 코드&quot;,
+  &quot;message&quot;: &quot;API 응답 메시지&quot;,
+  &quot;data&quot;: {
+    &quot;tid&quot;: &quot;PG거래번호&quot;,
+    &quot;tradeDateTime&quot;: &quot;거래일시&quot;,
+    &quot;respCode&quot;: &quot;승인코드&quot;,
+    &quot;respMessage&quot;: &quot;응답메시지&quot;,
+    &quot;payload&quot;: &quot;가맹점 데이터&quot;,
+    &quot;happyMoneyApprovalNumb&quot;: &quot;해피머니 승인번호&quot;
+  }
+}</p>
+<h1 id='b58e2c19be'>실패응답</h1>
+<p>{
+  &quot;aid&quot;: &quot;API 요청 고유값&quot;,
+  &quot;code&quot;: &quot;API 응답 코드&quot;,
+  &quot;message&quot;: &quot;API 응답 메시지&quot;,
+  &quot;data&quot;: {
+    &quot;tid&quot;: &quot;PG거래번호&quot;,
+    &quot;tradeDateTime&quot;: &quot;거래일시&quot;,
+    &quot;respCode&quot;: &quot;승인코드&quot;,
+    &quot;respMessage&quot;: &quot;응답메시지&quot;,
+    &quot;payload&quot;: &quot;가맹점 데이터&quot;,
+    &quot;happyMoneyApprovalNumb&quot;: &quot;해피머니 승인번호&quot;
+  }
+}
+```
+Name | Size | Description
+--------- | ---- | -----------------------
+tid  | 12  | PG거래번호
+respCode  | 4  | 응답코드
+respMessage  | 40  | 응답메시지
+payload  | *  | 가맹점데이터
+happyMoneyApprovalNumb | 14 | 해피머니 승인번호</p>
 <h2 id='7-3'>7.3 해피머니 사용</h2>
 <p>해피머니 사용 API입니다.</p>
 
@@ -1625,7 +1848,156 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
 <p><strong>HTTP Request</strong></p>
 
-<p>POST /kspay/webfep/api/v1/card/cancel <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=card_cancel');">테스트요청</button></code></p>
+<p>POST /kspay/webfep/api/v1/happymoney/pay <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=happymoney_pay');">테스트요청</button></code></p>
+<h3 id='9fead3874b-3'>요청항목</h3>
+<blockquote>
+<p>해피머니 사용 요청 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "required",
+    "orderNumb": "required",
+    "userName": "required",
+    "userEmail": "",
+    "productType": "required",
+    "productName": "required",
+    "totalAmount": "required",
+    "taxFreeAmount": "required",
+    "payload": "",
+    "happyMoneyUserId": "required",
+    "happyMoneyPayKey": "required"
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>orderNumb*</td>
+<td>50</td>
+<td><strong>가맹점 주문번호</strong></td>
+</tr>
+<tr>
+<td>userName*</td>
+<td>50</td>
+<td><strong>주문자명</strong></td>
+</tr>
+<tr>
+<td>userEmail</td>
+<td>50</td>
+<td><strong>주문자이메일</strong></td>
+</tr>
+<tr>
+<td>productType*</td>
+<td>10</td>
+<td><strong>상품구분</strong><br>- REAL : 실물상품, DIGITAL : 디지털컨텐츠</td>
+</tr>
+<tr>
+<td>productName*</td>
+<td>50</td>
+<td><strong>상품명</strong></td>
+</tr>
+<tr>
+<td>totalAmount*</td>
+<td>9</td>
+<td><strong>총금액</strong></td>
+</tr>
+<tr>
+<td>taxFreeAmount</td>
+<td>9</td>
+<td><strong>면세금액</strong><br>- 면세금액이 없으면 총금액 전체 과세처리</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>happyMoneyUserId*</td>
+<td>20</td>
+<td><strong>해피머니 사용자 아이디</strong></td>
+</tr>
+<tr>
+<td>happyMoneyPayKey*</td>
+<td>4</td>
+<td><strong>해피머니 결제키</strong><br>- 해피머니 잔액조회를 통해 부여받은 PG거래번호(tid)를 사용합니다.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+  "aid": "API 요청 고유값",
+  "code": "API 응답 코드",
+  "message": "API 응답 메시지",
+  "data": {
+    "tid": "PG거래번호",
+    "tradeDateTime": "거래일시",
+    "respCode": "승인코드",
+    "respMessage": "응답메시지",
+    "payload": "가맹점 데이터",
+    "happyMoneyApprovalNumb": "해피머니 승인번호"
+  }
+}
+
+# 실패응답
+{
+  "aid": "API 요청 고유값",
+  "code": "API 응답 코드",
+  "message": "API 응답 메시지",
+  "data": {
+    "tid": "PG거래번호",
+    "tradeDateTime": "거래일시",
+    "respCode": "승인코드",
+    "respMessage": "응답메시지",
+    "payload": "가맹점 데이터",
+    "happyMoneyApprovalNumb": "해피머니 승인번호"
+  }
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>happyMoneyApprovalNumb</td>
+<td>20</td>
+<td>해피머니 승인번호</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
