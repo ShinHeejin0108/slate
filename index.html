@@ -349,7 +349,7 @@
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
           <li>
-            <a href="#7" class="toc-h1 toc-link" data-title="7. 해피머니">7. 해피머니</a>
+            <a href="#7-api" class="toc-h1 toc-link" data-title="7. 해피머니 API">7. 해피머니 API</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#7-1" class="toc-h2 toc-link" data-title="7.1 해피머니 잔액조회">7.1 해피머니 잔액조회</a>
@@ -1600,7 +1600,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='7'>7. 해피머니</h1><h2 id='7-1'>7.1 해피머니 잔액조회</h2>
+<h1 id='7-api'>7. 해피머니 API</h1><h2 id='7-1'>7.1 해피머니 잔액조회</h2>
 <p>해피머니 잔액 조회 API입니다.</p>
 
 <p>잔액 조회 후 전달받는 PG거래번호(tid)는 해피머니 사용 API 호출 시 필수 파라미터로 전달하셔야 사용이 가능합니다.</p>
@@ -1637,13 +1637,13 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
 </tr>
 <tr>
-<td>happyMoneyUserId *</td>
-<td>10</td>
+<td>happyMoneyUserId*</td>
+<td>20</td>
 <td><strong>해피머니 사용자 아이디</strong></td>
 </tr>
 <tr>
-<td>happyMoneyUserPw *</td>
-<td>10</td>
+<td>happyMoneyUserPw*</td>
+<td>50</td>
 <td><strong>해피머니 사용자 패스워드</strong></td>
 </tr>
 </tbody></table>
@@ -1734,7 +1734,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>happyMoneyBalance</td>
-<td>20</td>
+<td>9</td>
 <td>해피머니 잔액</td>
 </tr>
 </tbody></table>
@@ -1778,17 +1778,17 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <tr>
 <td>orgTradeKeyType*</td>
 <td>50</td>
-<td>**거래키구분<br>- TID : 결제 응답으로 부여받은 tid 값<br>- ORDER_NUMB : 결제 요청 시 생성한 가맹점 주문번호</td>
+<td><strong>거래키구분</strong><br>- TID : 결제 응답으로 부여받은 tid 값<br>- ORDER_NUMB : 결제 요청 시 생성한 가맹점 주문번호</td>
 </tr>
 <tr>
 <td>orgTradeKey*</td>
 <td>50</td>
-<td>**원거래 키</td>
+<td><strong>원거래 키</strong></td>
 </tr>
 <tr>
-<td>orgTradeDate*</td>
-<td>50</td>
-<td>**원거래일자</td>
+<td>orgTradeDate</td>
+<td>8</td>
+<td><strong>원거래일자</strong></td>
 </tr>
 </tbody></table>
 <h3 id='body-gt-data-2'>응답항목(Body &gt; data)</h3>
@@ -1822,8 +1822,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
     "respMessage": "응답메시지",
     "payload": "가맹점 데이터",
     "happyMoneyApprovalNumb": "해피머니 승인번호"
-  }
-}
+  }}
 </code></pre></div>
 <table><thead>
 <tr>
@@ -1961,8 +1960,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
     "respMessage": "응답메시지",
     "payload": "가맹점 데이터",
     "happyMoneyApprovalNumb": "해피머니 승인번호"
-  }
-}
+  }}
 
 # 실패응답
 {
@@ -1976,8 +1974,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
     "respMessage": "응답메시지",
     "payload": "가맹점 데이터",
     "happyMoneyApprovalNumb": "해피머니 승인번호"
-  }
-}
+  }}
 </code></pre></div>
 <table><thead>
 <tr>
