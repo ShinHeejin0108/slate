@@ -16,10 +16,10 @@ POST /kspay/webfep/api/v1/happymoney/balance <code><button type="button" onclick
 
 ```예시
 {
-    "mid": "상점아이디",
+    "mid": "2999199999",
     "payload": "",
-    "happyMoneyUserId": "해피머니 사용자 아이디",
-    "happyMoneyUserPw": "해피머니 사용자 패스워드"
+    "happyMoneyUserId": "kspay",
+    "happyMoneyUserPw": "0000"
 }
 ```
 
@@ -36,47 +36,31 @@ happyMoneyUserPw*  | 50 | **해피머니 사용자 패스워드**
 ```예시
 # 성공응답
 {
-  "aid":"WFVCCSE00000000000054321",
-  "code":"A0200",
-  "message":"Success",
-  "data": {
-    "payload": "KST20240604S031",
-	"tid":"189189008016",
-    "tradeDateTime":"20240604120147",
-    "cancelAmount":"50004",
-    "respCode":"0000",
-    "respMessage":"승인취소완료/매입취소요청",
-    "issuerCardType":"HYUNDAI",
-    "issuerCardName":"현대카드",
-    "purchaseCardType":"HYUNDAI",
-    "purchaseCardName":"현대카드",
-    "approvalNumb":"00876543",
-    "cardNumb":"40176201XXXX825X",
-    "expiryDate":"",
-    "installMonth":"03"
-}}
+    "aid": "WF2HBSI00000000000002880",
+    "code":"A0200",
+    "message":"Success",
+    "data": {
+        "payload": "",
+        "tid": "",
+        "tradeDateTime": "20240624083737",
+        "respCode": "0000",
+        "respMessage": "",
+        "happyMoneyBalance": ""
+    }}
 
 # 실패응답
 {
-  "aid":"WFVCCSE00000000000054320",
-  "code":"A0201",
-  "message":"Fail",
-  "data": {
-    "payload": "KST20240604S027",
-	"tid":"Lbd124090990",
-    "tradeDateTime":"20240604102151",
-    "cancelAmount":"",
-    "respCode":"7003",
-    "respMessage":"취소거절기간경과/Tel:1544-6030",
-    "issuerCardType":"UNDEFINED",
-    "issuerCardName":"미등록카드사",
-    "purchaseCardType":"UNDEFINED",
-    "purchaseCardName":"미등록카드사",
-    "approvalNumb":"7003",
-    "cardNumb":"",
-    "expiryDate":"",
-    "installMonth":""
-}}
+    "aid": "WF2HBSI00000000000002880",
+    "code": "A0201",
+    "message": "Fail",
+    "data": {
+        "payload": "",
+        "tid": "",
+        "tradeDateTime": "20240624083737",
+        "respCode": "30002",
+        "respMessage": "가맹점ID 없음",
+        "happyMoneyBalance": ""
+    }}
 ```
 
 Name | Size | Description
@@ -105,20 +89,20 @@ POST /kspay/webfep/api/v1/happymoney/cancel <code><button type="button" onclick=
 
 ```예시
 {
-    "mid": "상점아이디",
-    "payload": "가맹점데이터",
-    "orgTradeKeyType": "거래키구분",
-    "orgTradeKey": "원거래 키",
-    "orgTradeDate": "원거래일자"
+    "mid": "2999199999",
+    "payload": "",
+    "orgTradeKeyType": "TID",
+    "orgTradeKey": "G89449000001",
+    "orgTradeDate": ""
 }
 ```
 Name | Size | Description
 --------- |---- | ------------------
 mid*  | 10 |**상점아이디**<br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디
 payload  | * | **가맹점데이터**<br>- API 응답에 돌려받을 가맹점의 데이터입니다.
-orgTradeKeyType*  | 50 |**거래키구분**<br>- TID : 결제 응답으로 부여받은 tid 값<br>- ORDER_NUMB : 결제 요청 시 생성한 가맹점 주문번호
-orgTradeKey*  | 50 |**원거래 키**
-orgTradeDate  | 8 |**원거래일자**
+orgTradeKeyType*  | 50 |**거래키구분<br>- TID : 결제 응답으로 부여받은 tid 값<br>- ORDER_NUMB : 결제 요청 시 생성한 가맹점 주문번호
+orgTradeKey*  | 50 |**원거래 키<br>- 원거래 구분에 해당하는 TID 혹은 ORDER_NUMB 값
+orgTradeDate  | 8 |**원거래일자<br>- 주문번호 취소시 설정필요(yyyyMMdd)
 
 ### 응답항목(Body > data)
 > 카드 인증 응답 예시
@@ -126,32 +110,31 @@ orgTradeDate  | 8 |**원거래일자**
 ```예시
 # 성공응답
 {
-  "aid": "API 요청 고유값",
-  "code": "API 응답 코드",
-  "message": "API 응답 메시지",
-  "data": {
-    "tid": "PG거래번호",
-    "tradeDateTime": "거래일시",
-    "respCode": "승인코드",
-    "respMessage": "응답메시지",
-    "payload": "가맹점 데이터",
-    "happyMoneyApprovalNumb": "해피머니 승인번호"
-  }
-}
+    "aid": "WFVHCSI00000000003100202",
+    "code":"A0200",
+    "message":"Success",
+    "data": {
+        "payload": "",
+        "tid": "G89449000001",
+        "tradeDateTime": "20240624084540",
+        "respCode": "0000",
+        "respMessage": "",
+        "happyMoneyApprovalNumb": ""
+    }}
 
 # 실패응답
 {
-  "aid": "API 요청 고유값",
-  "code": "API 응답 코드",
-  "message": "API 응답 메시지",
-  "data": {
-    "tid": "PG거래번호",
-    "tradeDateTime": "거래일시",
-    "respCode": "승인코드",
-    "respMessage": "응답메시지",
-    "payload": "가맹점 데이터",
-    "happyMoneyApprovalNumb": "해피머니 승인번호"
-  }}
+    "aid": "WFVHCSI00000000003100202",
+    "code": "A0201",
+    "message": "Fail",
+    "data": {
+        "payload": "",
+        "tid": "G89449000001",
+        "tradeDateTime": "20240624084540",
+        "respCode": "50006",
+        "respMessage": "결제내역 없음",
+        "happyMoneyApprovalNumb": ""
+    }}
 ```
 Name | Size | Description
 --------- | ---- | -----------------------
@@ -159,7 +142,7 @@ tid  | 12  | PG거래번호
 respCode  | 4  | 응답코드
 respMessage  | 40  | 응답메시지
 payload  | *  | 가맹점데이터
-happyMoneyApprovalNumb | 14 | 해피머니 승인번호
+happyMoneyApprovalNumb | 12 | 해피머니 승인번호
 
 ## 7.3 해피머니 사용
 
@@ -179,17 +162,17 @@ POST /kspay/webfep/api/v1/happymoney/pay <code><button type="button" onclick="ja
 
 ```예시
 {
-    "mid": "required",
-    "orderNumb": "required",
-    "userName": "required",
+    "mid": "2999199999",
+    "orderNumb": "kspay_1234",
+    "userName": "홍길동",
     "userEmail": "",
-    "productType": "required",
-    "productName": "required",
-    "totalAmount": "required",
-    "taxFreeAmount": "required",
+    "productType": "REAL",
+    "productName": "핑크테디",
+    "totalAmount": "1004",
+    "taxFreeAmount": "0",
     "payload": "",
-    "happyMoneyUserId": "required",
-    "happyMoneyPayKey": "required"
+    "happyMoneyUserId": "kspay",
+    "happyMoneyPayKey": "G89449000001"
 }
 ```
 
@@ -202,39 +185,39 @@ userEmail  | 50 |**주문자이메일**
 productType*  | 10 |**상품구분**<br>- REAL : 실물상품, DIGITAL : 디지털컨텐츠
 productName*  | 50 |**상품명**
 totalAmount*  | 9 |**총금액**
-taxFreeAmount  | 9 |**면세금액**<br>- 면세금액이 없으면 총금액 전체 과세처리
+taxFreeAmount*  | 9 |**면세금액**<br>- 면세금액이 없으면 총금액 전체 과세처리
 payload  | * | **가맹점데이터**<br>- API 응답에 돌려받을 가맹점의 데이터입니다.
 happyMoneyUserId*  | 20 |**해피머니 사용자 아이디**
-happyMoneyPayKey*  | 4 |**해피머니 결제키**<br>- 해피머니 잔액조회를 통해 부여받은 PG거래번호(tid)를 사용합니다.
+happyMoneyPayKey*  | 12 |**해피머니 결제키**<br>- 해피머니 잔액조회를 통해 부여받은 PG거래번호(tid)를 사용합니다.
 
 ```예시
 # 성공응답
 {
-  "aid": "API 요청 고유값",
-  "code": "API 응답 코드",
-  "message": "API 응답 메시지",
-  "data": {
-    "tid": "PG거래번호",
-    "tradeDateTime": "거래일시",
-    "respCode": "승인코드",
-    "respMessage": "응답메시지",
-    "payload": "가맹점 데이터",
-    "happyMoneyApprovalNumb": "해피머니 승인번호"
+    "aid": "WF2HPSI00000000000002893",
+    "code":"A0200",
+    "message":"Success",
+    "data": {
+        "payload": "",
+        "tid": "",
+        "tradeDateTime": "20240624084437",
+        "respCode": "0000",
+        "respMessage": "",
+        "happyMoneyApprovalNumb": ""
   }}
 
 # 실패응답
 {
-  "aid": "API 요청 고유값",
-  "code": "API 응답 코드",
-  "message": "API 응답 메시지",
-  "data": {
-    "tid": "PG거래번호",
-    "tradeDateTime": "거래일시",
-    "respCode": "승인코드",
-    "respMessage": "응답메시지",
-    "payload": "가맹점 데이터",
-    "happyMoneyApprovalNumb": "해피머니 승인번호"
-  }}
+    "aid": "WF2HPSI00000000000002893",
+    "code": "A0201",
+    "message": "Fail",
+    "data": {
+        "payload": "",
+        "tid": "",
+        "tradeDateTime": "20240624084437",
+        "respCode": "30002",
+        "respMessage": "가맹점ID 없음",
+        "happyMoneyApprovalNumb": ""
+    }}
 ```
 
 Name | Size | Description
