@@ -362,6 +362,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#api" class="toc-h1 toc-link" data-title="영구 가상계좌 발급 API">영구 가상계좌 발급 API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-2" class="toc-h2 toc-link" data-title="영구 가상계좌 발급 API">영구 가상계좌 발급 API</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://www.ksnet.co.kr'>KSNET</a></li>
@@ -1995,6 +2003,196 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>happyMoneyApprovalNumb</td>
 <td>20</td>
 <td>해피머니 승인번호</td>
+</tr>
+</tbody></table>
+<h1 id='api'>영구 가상계좌 발급 API</h1><h2 id='api-2'>영구 가상계좌 발급 API</h2>
+<p>영구성 가상계좌 발급 요청에 대한 API입니다.</p>
+
+<p>잔액 조회 후 전달받는 PG거래번호(tid)는 해피머니 사용 API 호출 시 필수 파라미터로 전달하셔야 사용이 가능합니다.</p>
+
+<p><strong>HTTP Request</strong></p>
+
+<p>POST /kspay/webfep/api/v1/vaccount/permanent <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=vaccount_permanent');">테스트요청</button></code></p>
+<h3 id='9fead3874b'>요청항목</h3>
+<blockquote>
+<p>영구성 가상계좌 발급 요청 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "mid": "2999199994",
+    "orderNumb": "carrot12212",
+    "orderName": "김토끼",
+    "goodName": "당근12kg",
+    "totalAmount": "1004",
+    "payload": "",
+    "bankType": "NONGHYUP",
+    "virtAccountType": "2",
+    "escrowType": "",
+    "closeDateTime": "20240624100000",
+    "virtAccountNumb": "10185164017326"
+}
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mid*</td>
+<td>10</td>
+<td><strong>상점아이디</strong><br>- 계약 완료 후 사업부를 통해 전달받은 상점아이디</td>
+</tr>
+<tr>
+<td>orderNumb*</td>
+<td>50</td>
+<td><strong>가맹점 주문번호</strong></td>
+</tr>
+<tr>
+<td>userName*</td>
+<td>50</td>
+<td><strong>주문자명</strong></td>
+</tr>
+<tr>
+<td>productName*</td>
+<td>50</td>
+<td><strong>상품명</strong></td>
+</tr>
+<tr>
+<td>totalAmount*</td>
+<td>9</td>
+<td><strong>결제금액</strong></td>
+</tr>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td><strong>가맹점데이터</strong><br>- API 응답에 돌려받을 가맹점의 데이터입니다.</td>
+</tr>
+<tr>
+<td>bankType*</td>
+<td>*</td>
+<td><strong>은행타입</strong><br>- 은행타입표를 참고하셔서 가상계좌 발급을 원하는 은행 타입을 세팅하시기 바랍니다.</td>
+</tr>
+<tr>
+<td>virtAccountType*</td>
+<td>1</td>
+<td><strong>가상계좌 구분자</strong><br>- 0 : 일반 가상계좌, 2: 영구성 가상계좌</td>
+</tr>
+<tr>
+<td>escrowType</td>
+<td>1</td>
+<td><strong>에스크로 구분자</strong><br>- 0:적용 안함 1:에스크로 적용</td>
+</tr>
+<tr>
+<td>closeDateTime</td>
+<td>14</td>
+<td><strong>마감일시</strong><br>- 상점아이디에 가상계좌 마감일시 세팅 옵션 설정시 필수값<br>- YYYYMMDDHHMISS</td>
+</tr>
+<tr>
+<td>virtAccountNum*</td>
+<td>15</td>
+<td><strong>가상계좌번호</strong><br>- 영구성 가상계좌 발급 시 필수<br>- 사업부를 통해 발급받은 가상계좌로만 사용이 가능하며, 발급이 필요할 시 사업부를 통해 연락바랍니다.</td>
+</tr>
+</tbody></table>
+<h3 id='body-gt-data'>응답항목(Body &gt; data)</h3>
+<blockquote>
+<p>신용카드 결제 취소 응답 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code># 성공응답
+{
+    "aid": "WFVVPSI00000000003100223",
+    "code": "A0200",
+    "message": "Success",
+    "data": {
+        "payload": "",
+        "tid": "689449000007",
+        "tradeDateTime": "20240624094405",
+        "totalAmount": "1004",
+        "respCode": "0000",
+        "respMessage": "계좌요청완료",
+        "bankType": "NONGHYUP",
+        "bankName": "농협중앙",
+        "virtualAccountNumb": "10185164017326",
+        "accountHolder": "(T)우체국쇼핑"
+    }}
+
+
+# 실패응답
+{
+    "aid": "WFVVPSI00000000003100222",
+    "code": "A0201",
+    "message": "Fail",
+    "data": {
+        "payload": "",
+        "tid": "689449000006",
+        "tradeDateTime": "20240624094116",
+        "totalAmount": "1004",
+        "respCode": "B013",
+        "respMessage": "발급거절/마감일자정보없음",
+        "bankType": "NONGHYUP",
+        "bankName": "농협중앙",
+        "virtualAccountNumb": "",
+        "accountHolder": ""
+    }}
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payload</td>
+<td>*</td>
+<td>가맹점데이터</td>
+</tr>
+<tr>
+<td>tid</td>
+<td>12</td>
+<td>PG거래번호</td>
+</tr>
+<tr>
+<td>tradeDateTime</td>
+<td>14</td>
+<td>거래일시(yyyyMMddHHmmss)</td>
+</tr>
+<tr>
+<td>totalAmount</td>
+<td>9</td>
+<td>취소된금액</td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>4</td>
+<td>응답코드</td>
+</tr>
+<tr>
+<td>respMessage</td>
+<td>40</td>
+<td>응답메시지</td>
+</tr>
+<tr>
+<td>bankType</td>
+<td>*</td>
+<td>은행타입</td>
+</tr>
+<tr>
+<td>bankName</td>
+<td>*</td>
+<td>은행명</td>
+</tr>
+<tr>
+<td>virtualAccountNumb</td>
+<td>15</td>
+<td>가상계좌번호</td>
+</tr>
+<tr>
+<td>accountHolder</td>
+<td>30</td>
+<td>예금주명</td>
 </tr>
 </tbody></table>
 
