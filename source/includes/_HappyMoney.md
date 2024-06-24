@@ -44,8 +44,8 @@ happyMoneyUserPw*  | 50 | **해피머니 사용자 패스워드**
         "tid": "",
         "tradeDateTime": "20240624083737",
         "respCode": "0000",
-        "respMessage": "",
-        "happyMoneyBalance": ""
+        "respMessage": "조회성공",
+        "happyMoneyBalance": "0000010000"
     }}
 
 # 실패응답
@@ -118,8 +118,8 @@ orgTradeDate  | 8 |**원거래일자<br>- 주문번호 취소시 설정필요(yy
         "tid": "G89449000001",
         "tradeDateTime": "20240624084540",
         "respCode": "0000",
-        "respMessage": "",
-        "happyMoneyApprovalNumb": ""
+        "respMessage": "취소성공",
+        "happyMoneyApprovalNumb": "00000000"
     }}
 
 # 실패응답
@@ -201,8 +201,8 @@ happyMoneyPayKey*  | 12 |**해피머니 결제키**<br>- 해피머니 잔액조�
         "tid": "",
         "tradeDateTime": "20240624084437",
         "respCode": "0000",
-        "respMessage": "",
-        "happyMoneyApprovalNumb": ""
+        "respMessage": "결제성공",
+        "happyMoneyApprovalNumb": "00000000"
   }}
 
 # 실패응답
