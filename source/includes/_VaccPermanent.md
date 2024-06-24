@@ -26,7 +26,6 @@ POST /kspay/webfep/api/v1/vaccount/permanent <code><button type="button" onclick
     "closeDateTime": "20240624100000",
     "virtAccountNumb": "10185164017326"
 }
-
 ```
 
 Name | Size | Description
