@@ -1,6 +1,6 @@
-# 7. 영구가상계좌발급 API
+# 가상계좌발급 API
 
-## 영구가상계좌발급
+## 가상계좌발급
 
 영구성 가상계좌 발급 요청에 대한 API입니다.
 
@@ -20,7 +20,7 @@ POST /kspay/webfep/api/v1/vaccount/permanent <code><button type="button" onclick
     "goodName": "당근12kg",
     "totalAmount": "1004",
     "payload": "",
-    "bankType": "NONGHYUP",
+    "bankType": "11",
     "virtAccountType": "2",
     "escrowType": "",
     "closeDateTime": "20240624100000",
@@ -36,7 +36,7 @@ userName*  | 50 |**주문자명**
 productName*  | 50 |**상품명**
 totalAmount*  | 9 |**결제금액**
 payload  | * | **가맹점데이터**<br>- API 응답에 돌려받을 가맹점의 데이터입니다.
-bankType*  | *  | **은행타입**<br>- 은행타입표를 참고하셔서 가상계좌 발급을 원하는 은행 타입을 세팅하시기 바랍니다.
+bankType*  | 2  | **은행타입**<br>- 은행타입표를 참고하셔서 가상계좌 발급을 원하는 은행 타입을 세팅하시기 바랍니다.
 virtAccountType*  | 1 | **가상계좌 구분자**<br>- 0 : 일반 가상계좌, 2: 영구성 가상계좌
 escrowType  | 1 | **에스크로 구분자**<br>- 0:적용 안함 1:에스크로 적용 
 closeDateTime  | 14  | **마감일시**<br>- 상점아이디에 가상계좌 마감일시 세팅 옵션 설정시 필수값<br>- YYYYMMDDHHMISS
