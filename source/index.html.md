@@ -11,6 +11,7 @@ includes:
   - errors
   - HappyMoney
   - VaccPermanent
+  - BankType
 
 search: false
 
