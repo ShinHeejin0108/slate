@@ -4,8 +4,6 @@
 
 영구성 가상계좌 발급 요청에 대한 API입니다.
 
-잔액 조회 후 전달받는 PG거래번호(tid)는 해피머니 사용 API 호출 시 필수 파라미터로 전달하셔야 사용이 가능합니다.
-
 **HTTP Request**
 
 POST /kspay/webfep/api/v1/vaccount/permanent <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=vaccount_permanent');">테스트요청</button></code>
