@@ -10,6 +10,7 @@ toc_footers:
 includes:
   - errors
   - HappyMoney
+  - Vacc_Permanent
 
 search: false
 
