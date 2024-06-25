@@ -1,6 +1,6 @@
-# 8. 영구 가상계좌 발급 API
+# 2. 가상계좌 발급 API
 
-## 영구 가상계좌 발급
+## 영구 가상계좌 발급 API
 
 영구성 가상계좌 발급 요청에 대한 API입니다.
 
@@ -8,7 +8,7 @@
 
 POST /kspay/webfep/api/v1/vaccount/permanent <code><button type="button" onclick="javascript:window.open('https://pgdev.ksnet.co.kr/kspay/webfep//api/test/x.jsp?api=vaccount_permanent');">테스트요청</button></code>
 
-### 요청항목
+### 요청항목gmlwls
 
 > 영구성 가상계좌 발급 요청 예시
 
